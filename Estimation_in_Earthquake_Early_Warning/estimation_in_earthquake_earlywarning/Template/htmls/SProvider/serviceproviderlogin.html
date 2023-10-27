@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="icon" href="{% static 'icon.png' %}" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+	<style>
+		body {
+			background: linear-gradient(to bottom, #f2f2f2, #ccc); /* Glassy grey background color */
+			font-family: 'Fredoka One', cursive;
+			background-image: url("{% static 'bg.jpg' %}");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: center;
+			color: #333; /* Dark text color */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+		}
+
+		.container {
+			background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+			text-align: center;
+			max-width: 400px; /* Limit card width */
+			margin: 0 auto; /* Center the card horizontally */
+		}
+
+		#title {
+			font-family: 'Fredoka One', cursive;
+			color: #FF0099; /* Attractive pink color */
+			margin: 0; /* Remove margin to center text vertically */
+		}
+
+		.style1 {
+			color: #FF0000;
+			font-weight: bold;
+		}
+
+		.style2 {
+			font-family: 'Righteous', cursive;
+			color: #FF0000;
+			font-weight: bold;
+		}
+
+		.form-group {
+			margin-bottom: 10px; /* Reduced margin */
+		}
+
+		input[type="text"],
+		input[type="password"] {
+			width: 100%;
+			padding: 8px; /* Reduced padding */
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-size: 14px; /* Reduced font size */
+		}
+
+		input[type="submit"] {
+			background-color: rgb(106 57 57); /* Attractive pink color */
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 12px 20px; /* Reduced padding */
+			font-size: 16px; /* Reduced font size */
+			cursor: pointer;
+		}
+
+			input[type="submit"]:hover {
+				background-color: #FF0077; /* Slightly darker pink on hover */
+			}
+
+		.btn-lg a {
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1 class="style2" id="title">Admin Login</h1>
+		<form method="POST" role="form">
+			{% csrf_token %}
+			<div class="form-group">
+				<input type="text" name="username" placeholder="User Name" required>
+			</div>
+			<div class="form-group">
+				<input type="password" name="password" placeholder="Password" required>
+			</div>
+			<div>
+				<input type="submit" name="submit1" class="btn btn-md" value="Login">
+			</div>
+		</form>
+		<br>
+		<div class="style1"><a href="{% url 'login' %}">User Login</a></div>
+	</div>
+</body>
+</html>

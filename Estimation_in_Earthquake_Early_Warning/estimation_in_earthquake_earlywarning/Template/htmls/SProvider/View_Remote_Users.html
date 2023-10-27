@@ -1,0 +1,114 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>View All Remote Users</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	{% load static %}
+	<link rel="icon" href="{% static 'icon.png' %}" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+	<style>
+		body {
+			background: linear-gradient(to bottom, #d0e3f3, #f0f0f0); /* Glassy grey-blue background color */
+			font-family: 'Fredoka One', cursive;
+			color: #333; /* Dark text color */
+		}
+
+		.container-fluid {
+			padding: 50px;
+		}
+
+		.container {
+			background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+			padding: 50px;
+			border-radius: 10px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+		}
+
+		.text-uppercase {
+			font-family: 'Righteous', cursive;
+			font-weight: bold;
+			color: #21567d; /* Blue text color */
+		}
+
+		.style1 {
+			color: #21567d; /* Blue text color */
+			font-weight: bold;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
+
+		th, td {
+			border: 1px solid #ccc;
+			padding: 8px;
+			text-align: center;
+		}
+
+		th {
+			background-color: #21567d; /* Blue background for headers */
+			color: #fff;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f2f2f2; /* Light grey background for even rows */
+		}
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<form role="form" method="POST">
+						{% csrf_token %}
+						<fieldset>
+							<h2 class="text-uppercase text-center style1">View All Remote Users</h2>
+							<div class="viewclients">
+								<table>
+									<tr>
+										<th>USER NAME</th>
+										<th>EMAIL</th>
+										<th>Gender</th>
+										<th>Address</th>
+										<th>Mob No</th>
+										<th>Country</th>
+										<th>State</th>
+										<th>City</th>
+									</tr>
+									<tr>
+										{% for o in objects %}
+										<td>{{o.username}}</td>
+										<td>{{o.email}}</td>
+										<td>{{o.gender}}</td>
+										<td>{{o.address}}</td>
+										<td>{{o.phoneno}}</td>
+										<td>{{o.country}}</td>
+										<td>{{o.state}}</td>
+										<td>{{o.city}}</td>
+									</tr>
+									{% endfor %}
+								</table>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div class="col-md-2">
+					<!-- Placeholder -->
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.idea",
+    "\\Database",
+    "\\estimation_in_earthquake_earlywarning",
+    "\\estimation_in_earthquake_earlywarning\\estimation_in_earthquake_earlywarning",
+    "\\estimation_in_earthquake_earlywarning\\Template",
+    "\\estimation_in_earthquake_earlywarning\\Template\\htmls",
+    "\\estimation_in_earthquake_earlywarning\\Template\\htmls\\media",
+    "\\venv",
+    "\\venv\\Include"
+  ],
+  "SelectedNode": "\\estimation_in_earthquake_earlywarning\\Template\\htmls\\SProvider\\train_model.html",
+  "PreviewInSolutionExplorer": false
+}
